@@ -1,0 +1,1144 @@
+\documentclass[a4paper]{article}
+\usepackage[UTF8]{ctex}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{cases}
+\usepackage{amssymb}
+\usepackage{color}
+\usepackage[rgb]{xcolor}
+\setstretch{1.5}
+\geometry{a4paper, top=1.8cm, left=2.5cm, right=2.5cm, bottom=1.8cm}
+
+\newcommand{\ColorImportant}{\textcolor{red!100!green!80!blue!60}}
+\newcommand{\ColorFormula}{\textcolor{red!100!green!73!blue!100}}
+
+\title{机械设计}
+\author{lhxl}
+
+\begin{document}
+\maketitle
+\raggedright
+\section{机械设计总论}
+名义载荷：根据额定功率用力学公式计算出的载荷，零件处于理想、平稳工作条件，记作$F_n$\\
+载荷系数：变化载荷的影响，记作载荷系数$K$\\
+计算载荷：$F_{ca}=KF_n$，一般大于1\\
+安全系数：$S=\frac{\sigma_{max}}{\sigma}$\\
+强度准则：对正应力$\sigma\leqslant[\sigma]=\frac{\sigma_{max}}{[S]}$\\
+最基本设计准则：强度准则\\
+\section{机械零件的强度}
+\subsection{材料的疲劳强度}
+材料的疲劳特性可用最大应力$\sigma_{max}$、应力循环次数$N$、应力比（循环特性）$r=\frac{\sigma_{min}}{\sigma_{max}}$来描述。
+$r=-1$称为对称循环应力（破坏最大），$r=0$称为脉动循环应力。\\
+平均应力$\sigma_m=\frac{\sigma_{max}+\sigma_{min}}{2}$、应力幅值\ColorImportant{（零件疲劳的主要因素）}$\sigma_a=\frac{\sigma_{max}-\sigma_{min}}{2}$
+，循环次数约为$10^3$前可看作静应力强度。\\
+\ColorImportant{动载荷只能产生动应力，静载荷可以产生静应力和动应力。}\\
+\ColorImportant{轴上的弯曲应力通常$r=-1$，接触应力通常$r=0$。}\\
+（一）$\sigma-N$疲劳曲线\\
+$\sigma_{max}-N$曲线，此处有图1.1.1【P27，图3-1】\\
+有限寿命疲劳极限用符号$\sigma_{rN}$表示，其中$r$为应力比、$N$为应力循环次数。\\
+图1.1.1的AB段可看作静应力\\
+\centering$\sigma_{lim}=\sigma_s, N\leqslant N_B(10^3)$，且$\sigma_{rN}<\sigma_s$。\\
+\raggedright 图1.1.1的BD段可用下式来描述\\
+\centering$\ColorFormula{\sigma_{rN}^mN=C}, N_B(10^3)\leqslant N\leqslant N_D(10^7)$，C和m为材料常数。\\
+\raggedright 图1.1.1的D+段可用下式来描述\\
+\centering$\sigma_{rN}=\sigma_{r\infty}, N>N_D(10^7)$\\
+\raggedright$\sigma_{r\infty}$表示点D对应的疲劳极限。\\
+常采用循环基数$N_0$，对应应力$\sigma_{rN_0}$简写为$\sigma_{r}$\\
+\centering$\sigma_{rN}^mN=\sigma^m_rN_0=C$\\
+\centering$\sigma_{rN}=\sigma_r\sqrt[m]{\frac{N_0}{N}}=K_N\sigma_r$\\
+\raggedright$K_N$称为寿命系数\\
+（二）等寿命疲劳曲线\\
+等寿命疲劳曲线，此处有图1.1.2【P29，图3-3】\\
+A'D'段，A'($0,\sigma_{-1}$)和D'($\frac{\sigma_0}{2},\frac{\sigma_0}{2}$)的连线。
+点C($\sigma_s,0$)，即静应力情况，最大静应力为屈服强度。\\
+由$A(0,\sigma_{-1})$和$D(\frac{\sigma_0}{2},\frac{\sigma_0}{2})$求出AG：$\sigma_a=-\phi_{\sigma}\sigma_m+\sigma_{-1}$\\
+$r=\frac{1-\tan\theta}{1+\tan\theta}$\\
+其中材料常数$\varphi_{\sigma}=\frac{2\sigma_{-1}-\sigma_0}{\sigma_0}$，即A'D'的斜率。\\
+CG：$\sigma_m+\sigma_a=\sigma_S$\\
+\subsection{机械零件的疲劳强度}
+（一）影响机械零件疲劳极限的因素\\
+零件的疲劳强度会因为应力集中、尺寸形状、表面状态等因素，小于材料试件的疲劳极限。\\
+应力集中：应力集中越大，疲劳极限越小。\\
+尺寸形状：尺寸越大，对疲劳强度不良影响越大。\\
+表面状态：强度极限越高，表面越粗糙，表面状态系数越低。\\
+零件实际的参数由下标e表示\\
+综合影响因素$K_{\sigma}=\frac{\sigma_{-1}}{\sigma_{-1e}}$\\
+因此\\
+\centering A'($0,\frac{\sigma_{-1}}{K_{\sigma}}$)、D'($\frac{\sigma_0}{2},\frac{\sigma_0}{2K_{\sigma}}$)、C($\sigma_s,0$)\\
+$\sigma_{-1e}=\frac{\sigma_{-1}}{K_{\sigma}}=\sigma_{ae}+\phi_{_{\sigma e}}\sigma_{me}$\\
+$\sigma_{me}+\sigma_{ae}=\sigma_S$\\
+\raggedright 其中$\phi_{\sigma e}=\frac{2\sigma_{-1}-\sigma_0}{K_{\sigma}\sigma_0}$\\
+$K_{\sigma}$可由下式计算\\
+\centering$K_{\sigma}=(\frac{k_\sigma}{\epsilon_{\sigma}}+\frac{1}{\beta_{\sigma}}-1)\frac{1}{\beta_q}$\\
+\raggedright（二）单向稳定变应力\\
+1. $r=C$\\
+延长OM至曲线点M'，求$S=OM'/OM$。\\
+2. $\sigma_m=C$\\
+过M作垂线，求比值。\\
+3. $\sigma_{min}$\\
+过M点做45°斜线，求比值。\\
+\raggedright（三）单向不稳定变应力\\
+规律性变应力：极限情况为\ColorFormula{$\sum\limits^z_{i=1}\frac{n_i}{N_i} = 1$}，应力先大后小小于1，先小后大大于1\\
+代入前式得$\frac{\sum\limits^z_{i=1}n_i\sigma^m_i}{N_0\sigma^m_{-1}}=1$\\
+计算应力$\sigma_{ca}=\sqrt[m]{\frac{1}{N_0}\sum\limits^z_{i=1}n_i\sigma_i^m}$\\
+（四）双向稳定变应力\\
+$(\frac{\tau_a}{\tau_{-1e}})^2+(\frac{\sigma_a}{\sigma_{-1e}})^2=1$\\
+$S_{ca}=\frac{S_{\sigma}S_\tau}{\sqrt{S_{\sigma}^2+S_{\tau}^2}}$\\
+（五）接触应力\\
+1. 两物体接触应力大小始终相等。\\
+2. 接触应力为脉动循环应力。\\
+3. 接触应力主要引起疲劳失效（点蚀）。\\
+4. 外接触应力一般大于内接触应力。\\
+5. 曲率半径越大，接触应力越小。\\
+6. 圆柱体$\sigma_{max}\sim F^{\frac12}$，球体$\sigma_{max}\sim F^{\frac13}$。\\
+
+
+\section{螺纹连接和螺旋传动}
+\subsection{螺纹}
+管螺纹采用英制，其他都采用米制。\\
+普通螺纹、管螺纹用于连接，梯形螺纹、矩形螺纹和锯齿形螺纹用于传动\\
+线数越多，传动效率越高，加工越困难\\
+各螺纹形状见图2.1.1【P71，表5-1】\\
+
+\begin{table}[!ht]
+	\begin{center}
+		\caption{螺纹的主要参数}
+		\begin{tabular}{c|l}
+			大径$d$ & 螺纹的最大直径\\
+			小径$d_1$ & 螺纹的最小直径\\
+			中径$d_2$ & 大小径的平均\\
+			线数$n$ & 螺旋线数目\\
+			螺距$P$ & 螺纹相邻两牙在中径线上对应两点间的距离\\
+			导程$P_h$ & 同一螺旋线的螺距\\
+			螺纹升角$\phi$ & 螺旋线在中径上的切线与水平的夹角\\
+			牙型角$\alpha$ & 牙的两侧面的夹角\\
+			接触高度$h$ & 内外螺纹接触面的径向长度\\
+		\end{tabular}
+	\end{center}
+\end{table}
+
+\subsection{螺纹类型和应用}
+1.螺栓链接\\
+普通螺纹三角形牙型角为60°，梯形螺纹牙型角为30°，矩形螺纹0°，锯齿形螺纹3°和30°。\\
+螺距最大的为粗哑牙螺纹，其余为细牙螺纹（自锁性好）。\\
+连接时用普通螺纹，\ColorImportant{自锁性好}，传动时用后三种。\\
+需要较大传动效率，有双向传力需求选用梯形螺纹。\\
+传力较大、效率高、单向传力用锯齿形螺纹。\\
+清污设备、水闸阀门、管道，选用管螺纹。\\
+\subsection{螺纹连接的类型和标准连接件}
+1. 螺栓连接\\
+分为普通螺栓连接和铰制孔用螺栓链接。\\
+普通链接的特点是通孔与螺栓杆之间留有间隙，靠工件摩擦力传递载荷，通孔的加工要求低，结构简单。\\
+失效形式：螺栓发生塑性变形或断裂\\
+铰制孔采用基孔制过渡配合，螺栓受剪切和挤压，能承受较大横向载荷，对孔的加工要求高。\\
+失效形式：螺栓与工件贴合面上被压溃或剪断。\\
+2. 双头螺柱\\
+适用于经常拆装的盲孔。\\
+3. 螺钉连接\\
+适用于不经常拆装的盲孔。\\
+4. 紧定螺钉连接。\\
+传递转矩较小\\
+见图【P73~74， 图5-2~5-4】\\
+\subsection{螺纹连接的预紧}
+预紧就是在工件使用前拧紧螺栓。\\
+预紧的目的：增强连接的可靠性和紧密性，防止收载后被连接件出现缝隙。\\
+预紧力的控制方法：使用测力矩扳手或定力矩扳手。\\
+%\\\\\\\\\\\\\\\\\\
+拧紧力矩包含，由螺旋之间的摩擦和螺母与垫片或工件之间的摩擦产生的力矩组成。\\
+\centering$T=T_1+T_2$\\
+\raggedright 螺旋副：\\
+\centering$T_1=F_0\frac{d_2}{2}\tan(\phi+\varphi_v)$\\
+\raggedright 螺母与支撑面：\\
+\centering$T_2=\frac13f_cF_0\frac{D_0^3-d_0^3}{D_0^2-d_0^2}$\\
+$T=\frac12F_0[d_2\tan(\phi+\varphi_v)+\frac23f_c\frac{D_0^3-d_0^3}{D_0^2-d_0^2}]$\\
+\raggedright 普遍使用$T\approx0.2F_0d$\\
+\centering$L_M=L_S+\frac{F_0}{C_b}$\\
+\raggedright$L_M$为螺栓被拉长后的长度，$L_S$为螺栓的初始长度，$C_b$为螺栓的刚度系数。\\
+对于不重要的螺栓连接可以以转角预估预紧力为$\theta=\frac{360^{\circ} F_0}{PC_b}$\\
+\subsection{螺纹连接的防松}
+普通螺纹具有自锁性。但在冲击、震动等载荷下连接中的预紧力和螺旋副间的摩擦力可能瞬时减小或消失，导致连接松脱，连接失效。在高温等温变情况下，可使预紧力摩擦力逐渐减小。\\
+因此，应采用防松。\\
+防松分为摩擦放松、机械防松和破坏螺旋副防松。
+摩擦防松：双螺母、弹簧垫圈、自锁螺母。\\
+机械防松：开口销、止动垫圈、串联钢丝。\\
+破坏螺旋副防松（永久防松）：冲点、铆合、焊合、粘合。\\
+
+见表2.4.1【P79，表5-3】。\\
+\subsection{螺栓组连接的设计}
+（1）螺栓布置尽量对称，对称中心与形心重合使受力均匀。\\
+（2）各螺栓应受力合理，避免在平行与载荷的方向上布置8个以上的螺栓。当螺栓受弯矩或转矩时，螺栓应适当靠近接合面边缘，减小螺栓的受力。\\
+（3）螺栓的排列应有合理间距边距。\\
+（4）同一圆周上的螺栓数目应取偶数。\\
+（5）避免螺栓承受附加的弯曲载荷，如螺母接触面不平整、不水平等。\\
+\subsubsection{螺栓组连接的受力分析}
+（1）受横向载荷，横向总载荷$F_{\sum}$，螺栓数z，接合面的摩擦因数，结合面数i，防滑系数$K_s$\\
+由于受横向载荷，应用铰制孔。\\
+每个螺栓受到的剪力为$F=\frac{F_{\sum}}{z}$\\
+\centering$fF_0zi\geqslant K_sF_{\sum}$\\
+$F_0\geqslant\frac{K_sF_{\sum}}{fzi}$\\
+\raggedright（2）受转矩，转矩$T$，第$i$个螺栓的轴线到螺栓组对称中心$O$的距离$r_i$\\
+采用普通螺栓：\\
+\centering$fF_0r_1+fF_0r_2+\cdots+fF_0r_z\geqslant K_sT$\\
+$F_0\geqslant\frac{K_sT}{f\sum\limits^z_{i=1}r_i}$\\
+\raggedright 采用铰制螺栓：\\
+\centering$\frac{F_{max}}{r_{max}}=\frac{F_i}{r_i}$\\
+$F_{max}=\frac{Tr_{max}}{\sum\limits^z_{i=1}r^2_i}$\\
+$F=\frac{F_{\sum}}{z}$\\
+\raggedright （3）受倾覆力矩，倾覆力矩$M$，预紧力产生的挤压应力$\sigma_{bs}$，接合面的有效面积$A$，附加挤压应力$\Delta\sigma_{bsmax}$\\
+\centering$M=\sum\limits^z_{i=1}F_iL_i$\\
+$F_{max}=\frac{ML_{max}}{\sum\limits^z_{i=1}L^2_i}$\\
+$\Delta\sigma_{bsmax}\approx\frac MW$\\
+$$\begin{cases}
+	\sigma_{bamax} &\approx\frac{zF_0}{A}+\frac MW\leqslant[\sigma_{bs}]\\
+	\sigma_{bamax} &\approx\frac{zF_0}{A}-\frac MW>0\\
+\end{cases}$$
+\raggedright\subsection{螺纹连接的强度计算}
+（1）松螺栓连接\\
+受正应力。\\
+\centering$\sigma=\frac{F}{\frac{\pi}{4}d_1^2}\leqslant[\sigma]$\\
+$d_1\geqslant\sqrt{\frac{4F}{\pi[\sigma]}}$\\
+\raggedright（2）紧螺栓连接\\
+受拉伸：正应力、螺纹摩擦：扭转力矩\\
+\centering$\sigma=\frac{F_0}{\frac{\pi}{4}d_1^2}$\\
+$\tau=\frac{F_0\tan(\phi+\varphi_v)\frac{d_2}{2}}{\frac{\pi}{16}d_1^3}=\frac{\tan\phi+\tan\varphi_v}{1-\tan\phi\tan\varphi_v}\frac{2d_2}{d_1}\frac{F_0}{\frac{\pi}{4}d_1^2}$\\
+$\tau\approx0.5\sigma$\\
+$\sigma_{ca}=\sqrt{\sigma^2+3\tau^2}\approx1.3\sigma$\\
+\ColorImportant{第四强度理论}
+$\sigma_{ca}=\frac{1.3F_0}{\frac{\pi}{4}d_1^2}$\\
+\raggedright 为保证连接紧密，残余预紧力应大于0\\
+$$\begin{cases}
+	\frac{F_0}{\lambda_b}&=\tan\theta_b=C_b\\
+	\frac{F_0}{\lambda_m}&=\tan\theta_m=C_m\\
+\end{cases}$$
+\raggedright$C_b$为螺栓的刚度，$C_m$为被连接件的刚度\\
+\centering$F_0=F_1+(F-\Delta F)$\\
+$\frac{\Delta F}{F-\Delta F}=\frac{C_b}{C_m}$\\
+$\Delta F=\frac{C_b}{C_b+C_m}F$\\
+\raggedright 螺栓预紧力：\\
+$F_0=F_1+\frac{C_m}{C_b+C_m}F$\\
+\raggedright 螺栓总拉力：\\
+\centering $F_2=F_0+\frac{C_b}{C_b+C_m}F$\\
+\raggedright$\frac{C_b}{C_b+C_m}$称为螺栓的相对刚度，应尽可能小\\
+应力幅：
+\centering $\sigma_a=\frac{C_b}{C_b+C_m}\frac{2F}{\pi d^2_1}$
+\raggedright
+
+\subsection{螺纹连接件的材料和许用应力}
+\subsubsection{螺纹连接件的材料}
+国标规定螺纹连接件按材料的力学性能划分等级，从4.6到12.9，共9级。\\
+小数点左边的数字为公称抗拉强度的1/100。\\
+点右边的数字表示屈服强度与公称抗拉强度的比值的10倍。\\
+螺母的性能等级数字为公称应力的1/100，0表示承载能力比普通螺母低。\\
+\subsubsection{螺纹连接件的许用应力}
+对于钢$[\sigma_{bs}]=\frac{\sigma_S}{S_{bs}}$\\
+对于铸铁$[\sigma_{bs}]=\frac{\sigma_B}{S_{bs}}$\\
+两者都$[\tau]=\frac{\sigma_S}{S}$\\
+
+\subsection{提高螺纹连接强度的措施}
+（一）降低影响螺栓疲劳强度的应力幅\\
+减小螺栓刚度$C_b$，增大被连接件刚度$C_m$。\\
+增大预紧力$F_0$，但不宜过大。\\
+适当增加螺栓长度。\\
+采用腰杆状螺栓或空心螺栓。\\
+不用垫片或采用高刚度垫片（金属垫片或密封环）。\\
+采用柔性螺栓。\\
+（二）改善螺纹牙上载荷分布不均的现象\\
+不能加厚螺母。\\
+使用悬置螺母。\\
+使用钢丝螺套。\\
+（三）减小应力集中\\
+采用较大圆角。\\
+螺纹收尾改为退刀槽。\\
+避免螺纹连接产生附加弯曲应力。\\
+（四）采用合理的制造工艺\\
+采用冷镦螺栓头部和滚压螺纹的工艺（不切断材料纤维）。\\
+在工艺上采用氮化、氰化、喷丸等处理。\\
+
+
+\section{键、花键、无键连接和销连接}
+\subsection{键连接}
+键通常用来实现轴与轮毂之间的周向固定来传递转矩，或实现轴上零件的轴向固定或轴向滑动的导向。\\
+键连接的主要类型有\ColorImportant{平键连接、半圆键连接、楔形链接和切向键连接}\\
+\subsubsection{平键连接}
+平键结构形式，见图4.1.1.1【P115，图6-1】\\
+键的侧面是工作面，上表面和轮毂间留有空隙。\\
+具有结构简单、装拆方便对中性好的优点。\\
+不能承受轴向力，起不到轴向固定的作用。\\
+根据用途，平键可分为普通平键、薄型平键、导向平键和滑键。\\
+根据构造，可分三种。\\
+圆头（A），宜放在轴上用键槽铣刀铣出的键槽中，键固定良好，但头部侧面与轮毂接触不接触，不能充分利用圆头部分，且轴上键槽端部应力集中大。\\
+平头（B），放在盘铣刀铣出的键槽中，避免上述缺点，但键与键槽两端有较大间隙，对于尺寸大的键宜用紧定螺钉固定在键槽中，防止松动。\\
+单圆头（C），常用于轴端和毂类零件的连接。\\
+\vspace*{1em}
+
+薄型平键，键的高度为普通平键的60\%~70\%，也分三种构造，传递转矩的能力较低。\\
+常用于薄壁结构空心轴及径向尺寸受限的场合。\\
+\vspace*{1em}
+
+当零件在工作过程中必须在轴上做轴向移动时，用导向平键或滑键。\\
+导向平键是一种较长的平键，用螺钉固定在轴上的键槽中，为了便于拆卸，键上有起键螺钉。\\
+当滑移距离过大时需采用滑键，滑键固定在轮毂上，轮毂带动滑键在轴上滑动，只要在轴上铣出长键槽。\\
+\vspace*{1em}
+
+半圆键连接
+半圆键结构形式，见图4.1.1.2【P116，图6-3】
+轴上键槽用与尺寸半圆键相同的半圆键铣刀铣出。\\
+优点是工艺性好，装配方便，装配方便。\\
+键槽较深，对轴的强度削弱大，因此只适宜轻载连接。\\
+\vspace*{1em}
+楔键连接\\
+分为普通楔键和钩头楔键。\\
+装配时先装键后打紧轮毂，钩头用于拆卸。\\
+靠键的楔紧作用来传递转矩，同时承受单向的轴向载荷。\\
+键的侧面也能参与工作，因此在传递有冲击和震动的较大转矩时也能保证链连接的可靠性。\\
+缺点是楔紧后，轴与轮毂配合产生偏心和倾斜，因此主要用于精度要求不高，低转速的场合。\\
+\vspace*{1em}
+切向键连接\\
+本质是一对楔键分别从轮毂两端打入。\\
+考挤压力和摩擦力传递转矩。\\
+一个切向键只能传递单向转矩，两个才能双向，夹角为$120^{\circ}\sim130^{\circ}$\\
+键槽较深，对轴的强度削弱大，因此用于直径大于100mm的轴上。\\
+\subsubsection{键的选择和强度计算}
+1. 键的选择
+包括类型和尺寸。\\
+键的类型应根据键的连接特点、使用要求和工作特点来选取。\\
+主要尺寸为截面尺寸键宽*键高（$b\times h$）和长度$L$。\\
+一般轮毂长度$L'\approx(1.5\sim2)d$，$d$为轴的直径。\\
+主要尺寸见表【P118，6-1】。\\
+2. 键的强度计算\\
+（1）平键连接强度计算\\
+受力情况见【P118，图6-6】。\\
+因键不易剪断，因此只对工作面的挤压应力进行校核。\\
+对于导向平键和滑键连接，主要失效形式是工作面磨损。\\
+普通平键的挤压应力：\\
+\centering$\sigma_{bs}=\frac{F}{S}=\frac{4T}{hld}(GPa)=\frac{4000T}{hld}(MPa)\leqslant[\sigma_{bs}]$\\
+\raggedright（2）半圆键连接强度计算\\
+工作长度近似取键的弦长。\\
+\centering$l\approx L=2\sqrt{h(d-h)}$\\
+\raggedright（3）楔键连接简化强度计算\\
+\centering$\sigma_{bs}=\frac{12T\times10^3}{bl(b+6fd)}\leqslant[\sigma_{bs}]$\\
+\raggedright（4）切向键连接简化强度计算\\
+\centering$\sigma_{bs}=\frac{T\times10^3}{(t-C)dl(0.5f+0.45)}\leqslant[\sigma_{bs}]$\\
+\raggedright 式中C-键的倒角尺寸，mm\\
+采用双键时平键应相隔$180^\circ$，楔键应相隔$90^\circ\sim120^\circ$，由于两键上载荷分布不均，\ColorImportant{计算时按1.5个键计算}。\\
+\subsection{花键连接}
+\subsubsection{花键连接的类型、特点和应用}
+与普通平键相比的优点：\\
+1）在轴上和毂孔上直接制齿和槽，受力均匀。\\
+2）槽较浅，齿根处应力集中小，对轴与鼓的强度削弱小。\\
+3）齿数较多，总接触面积大，可承受较大载荷。\\
+4）轴上零件对中性好。\\
+5）导向性较好。\\
+6）可用磨削的方法提高加工精度及连接质量。\\
+缺点：\\
+1）齿根仍有应力集中。\\
+2）有时需要专门设备加工，成本较高。\\
+因此，花键适用于定心精度要求高的、载荷大的或经常滑移的连接。\\
+\subsubsection{连接强度计算}
+\subsection{无键连接}
+\subsubsection{型面连接}
+\subsubsection{涨紧连接}
+\subsection{销连接}
+
+
+
+\section{带传动}
+\subsection{概述}
+带传动是一种挠性传动。
+优点：结构简单；传动平稳，无噪音；制造和安装精度比啮合传动低，价格低廉；能缓冲载荷冲击吸振；可以用于中心距较大的场合等特点。\\
+缺点：\ColorImportant{弹性滑动不可避免}，会降低带传动的传动效率并\ColorImportant{无法保持稳定的平均传动比}；传递同样的圆周力时，轮廓尺寸和轴上的压力大于啮合传动；带的寿命较短\\
+\subsubsection{带传动的类型}
+根据传动带横截面形状的不同，摩擦型带传动可分为平带传动、圆带传动、V带传动和多楔形传动。\\
+平带传动：结构简单、传动效率高，带轮易制造\\
+圆带传动：结构简单，多用于小功率传动。\\
+V带传动：横截面成等腰梯形，带轮需做出轮槽。槽面摩擦可提供更大的摩擦力，允许更大的传动比，结构紧凑。\\
+多楔形传动：兼有平带的柔性好和V带的摩擦力大，用于传动力大的同时要求结构紧凑的场合\\
+啮合型带传动：也被称为同步带传动，通过带内表面等距分布的齿啮合传递动力，没有相对滑动，传动比不变，但对中心距及尺寸稳定性要求较高。\\
+
+\subsubsection{V带的类型与结构}
+根据结构分为包边V带和切边V带，由胶帆布、顶胶、芯绳和底胶组成。\\
+普通V带具有对称的梯形横截面，带型分为Y、Z、A、B、C、D、E七种，截面尺寸依次增加。\\
+窄V带，带型分为SPZ、SPA、SPB、SPC四种，截面尺寸依次增加。\\
+\ColorImportant{窄V带承载能力大于普通V带，窄V带增加高度并非变窄}，且抗拉体材料承载能力大，截面形状改进。适用于传递功率较大同时外形尺寸较小的场合。\\
+\subsection{带传动工作情况的分析}
+\subsubsection{带传动的受力分析}
+工作前传送带以一定初拉力$F_0$张紧在带轮上。\\
+工作时，紧边拉力为$F_1$，松边为$F_2$\\
+\centering$F_1-F_0=F_0-F_2$\\
+$F_1+F_2=2F_0$\\
+\raggedright 带的总有效拉力（主动轮的总摩擦力），超过摩擦力极限会打滑，磨损带轮发热。\\
+\centering$F_e=F_f=F_1-F_2$\\
+\raggedright 带传动传递的功率为\\
+\centering$P=\frac{F_ev}{1000}$\\
+其中$v=\frac{\pi d_{d1}n_1}{60\times1000}$\\
+\raggedright 由此公式得到同功率下速度越大，总拉力越小，因此\ColorImportant{带传动一般置于高速级}。\\
+
+\subsubsection{带传动的最大有效拉力机器影响因素}
+
+\centering$F_1=F_2e^{f\alpha}$\\
+\raggedright 小带轮与大带轮的包角分别为\\
+$$\begin{cases}
+	\alpha_1\approx&180^\circ-(d_{d2}-d_{d1})\frac{57.3^\circ}{a}\\
+	\alpha_2\approx&180^\circ+(d_{d2}-d_{d1})\frac{57.3^\circ}{a}\\
+\end{cases}$$
+\centering$57.3^\circ\approx \frac{180^\circ}{\pi}$\\
+\raggedright 带的最大（临界）有效拉力\\
+$$\begin{cases}
+	F_1=&F_{ec}\frac{e^{f\alpha}}{e^{f\alpha}-1}\\	
+	F_2=&F_{ec}\frac{1}{e^{f\alpha}-1}\\
+	F_{ec}=&2F_0\frac{e^{f\alpha}-1}{e^{f\alpha}+1}	
+\end{cases}$$
+其中包角选择较小值。\\
+$F_0$较小时易打滑，较大时易磨损。\\
+包角越大，最大拉力越大。\\
+摩擦系数越大，最大拉力越大。\\
+
+
+\subsubsection{带的应力分析}
+拉应力、弯曲应力、离心拉应力。\\
+$$\begin{cases}
+	\sigma_1=&\frac{F_1}{A}\\
+	\sigma_2=&\frac{F_2}{A}\\
+	\sigma_{b1}\approx&E\frac{h}{d_{d1}}\\
+	\sigma_{b2}\approx&E\frac{h}{d_{d2}}\\
+	\sigma_c=&\frac{qv^2}{A}
+\end{cases}$$
+此处有图【P161，图8-9】。
+
+\centering$\sigma_{max}\approx\sigma_1+\sigma_{b1}+\sigma_c$\\
+\ColorImportant{最大应力发生在带刚绕上小带轮处}。
+\subsubsection{带的弹性滑动和打滑}
+\raggedright 由于带发生弹性形变，两带轮速度并不相等，因此带与带轮之间存在滑动。\\
+滑动率\\
+\centering$\epsilon=\frac{v_1-v_2}{v_1}\times100\%$\\
+$v_2=(1-\epsilon)v_1$\\
+$i=\frac{n_1}{n_2}=\frac{d_{d2}}{(1-\epsilon)d_{d1}}$\\
+\raggedright\subsection{普通V带传动的设计计算}
+\subsubsection{设计准则和单根V带的基本额定功率}
+带传动的主要失效形式时打滑和疲劳破坏。\\
+V带的疲劳强度条件为\\
+\centering$\sigma_{max}\approx\sigma_1+\sigma_{b1}+\sigma_c\leqslant[\sigma]$\\
+\raggedright 即\\
+\centering$\sigma_1\leqslant[\sigma]-\sigma_{b1}-\sigma_c$\\
+\raggedright 此时\\
+\centering$F_{ec}=F_1(1-\frac{1}{e^{f_v\alpha}})=\sigma_1A(1-\frac{1}{e^{f_v\alpha}})$\\
+\raggedright 此时，单根带的基本额定（最大）功率为\\
+\centering$P_0=\frac{([\sigma]-\sigma_{b1}-\sigma_c)(1-\frac{1}{e^{f_v\alpha}})Av}{1000}$\\
+\raggedright 基本额定功率主要与带型、小带轮基准直径、带速有关。\\
+见【P163~164，表8-4】，根据小带轮转速和基本额定功率选择小带轮的基准直径。\\
+
+\subsubsection{单根V带的额定功率}
+\centering$P_t=(P_0+\Delta P_0)K_\alpha K_L$\\
+\raggedright$\Delta P_0$，见表【P165，表8-5】。\\
+$K_\alpha$见表【P166，表8-6】。\\
+$K_L$见表【P157，表8-2】。\\
+
+\subsubsection{带传动的参数选择}
+1. 中心距\\
+\centering$0.7(d_{d1}+d_{d2})\leqslant a_0\leqslant2(d_{d1}+d_{d2})$\\
+\raggedright 中心距过大，带高速时易发生抖动。\\
+2. 传动比\\
+小于7，推荐2~5\\
+3. 带轮的基准直径\\
+\centering$d_d\geqslant (d_d)_max$\\
+\raggedright 见【P166表8-7】\\
+4. 带速\\
+一般推荐5~25，不超过30\\
+
+\subsubsection{带传动的设计计算}
+1. 确定计算功率\\
+\centering$P_{ca}=K_AP$\\
+\raggedright $K_A$见【P168，表8-8】\\
+2. 选择V带带型\\
+根据小带轮转速和计算功率。\\
+见【P168，图8-11】\\
+3. 初选小带轮基准直径\\
+见【P166表8-7】、【P168，图8-11】、【P169，表8-9】，使$d_d\geqslant (d_d)_max$\\
+4. 验算带速\\
+5. 计算大带轮的基准直径\\
+\centering$d_{d2=id_{d1}}$\\
+\raggedright 并根据【P169，表8-9】进行圆整\\
+6. 确定中心距\\
+\centering$0.7(d_{d1}+d_{d2})\leqslant a_0\leqslant2(d_{d1}+d_{d2})$\\
+\raggedright 7. 计算带长\\
+\centering$L_{d0}\approx2a_0+\frac{\pi}{2}(d_{d1}+d_{d2})+\frac{(d_{d2}-d_{d1})^2}{4a_0}$\\
+\raggedright 8. 计算实际中心距
+$$\begin{cases}
+	a_{min}=&a-0.015L_d\\
+	a_{max}=&a+0.03L_d
+\end{cases}$$
+8. 验算小带轮包角\\
+\centering$\alpha_1\approx180^\circ-(d_{d2}-d_{d1})\frac{57.3^\circ}{a}\geqslant120^\circ$\\
+\raggedright 9. 确定带的根数\\
+\centering$z=\frac{P_{ca}}{P_r}=\frac{K_AP}{(P_0+\Delta P_0)K_\alpha K_L}$\\
+\raggedright \ColorImportant{应小于等于4根}，带数过多易受力不均。\\
+9. 确定带的初拉力\\
+\centering$F_0=500\frac{(2.5-K_\alpha)P_{ca}}{K_\alpha zv}+qv^2$\\
+\raggedright *10. 安装V带\\
+在带跨度中点施加一垂直力G，使带产生1.6：100的挠度（1.8°）\\
+新安装的V带：$G=\frac{1.5F_0+\Delta F_0}{16}$\\
+运转后的V带：$G=\frac{1.3F_0+\Delta F_0}{16}$\\
+最小极限值：$G=\frac{F_0+\Delta F_0}{16}$\\
+11. 计算带传动的压轴力\\
+\centering$F_P=2zF_0\sin\frac{\alpha_1}{2}$\\
+\raggedright\subsection{V带轮的设计}
+\subsubsection{V带轮的设计内容}
+
+\subsubsection{带轮的材料}
+常用材料为HT150或HT200，转速较高时可采用铸钢或焊接冲压钢板，小功率时可采用铸铝或塑料。\\
+
+\subsubsection{带轮的结构形式}
+V带轮由轮缘、轮辐和轮毂组成。\\
+根据轮辐，可分为实心式、腹板式、孔板式、椭圆轮辐式。\\
+$d_d\leqslant2.5d$，实心式。\\
+$d_d\leqslant300$， 腹板式。\\
+$d_d\leqslant300~\&\&~D_1-d_1\geqslant100$，孔板式。\\
+$d_d\geqslant300$，轮辐式。\\
+
+\subsubsection{V带轮的轮槽}
+见【P171，表8-11】\\
+轮槽表面粗糙度为Ra1.6或Ra3.2\\
+
+\subsubsection{V带轮的技术要求}
+不允许有砂眼、裂缝、缩孔和气泡。\\
+铸造带轮可在不提高内部应力的情况下对表面缺陷修补。\\
+转速低于极限转速要做静平衡，反之动平衡。\\
+
+\subsection{V带传动的张紧、安装与防护}
+\subsubsection{V带转动的张紧}
+原因：带随使用会拉长。\\
+1. 定期张紧（调整中心距）\\
+2. 自动张紧\\
+3. 张紧轮张紧\\
+放在松边内侧，使带只受单向弯曲。\\
+尽可能靠近大带轮，减小小带轮的包角。\\
+轮槽直径等于带轮，张紧轮直径小于小带轮。\\
+中心距过小时可放在靠近小带轮的松边外侧。\\
+
+\subsubsection{V带传动的安装}
+带轮轴线平行，各带轮V形槽对称面重合，误差小于20'。\\
+多跟V带，配合公差满足国标。\\
+
+\subsubsection{V带传动的防护}
+带传动置于铁丝网或保护罩内。\\
+
+
+
+\section{链传动}
+\subsection{链传动的特点及应用}
+链传动是一种挠性传动，通过啮合来传递动力，因此不会打滑。\\
+优点：与带传动相比，不会打滑，\ColorImportant{能保证稳定的平均传动比}，传动效率高，无需张紧，作用于轴上的径向压力小。链条采用金属材质，相同条件下整体尺寸较小，能在高温潮湿环境工作。\\
+制造安装精度低，成本低，远距离传动较齿轮更轻便。\\
+缺点：只能用于平行轴之间的传动，\ColorImportant{不能保证瞬时传动比}，高速传动不如带传动稳定，磨损后会跳齿，工作有噪音，成本高于带传动。\\
+因此不宜用在载荷变化大，高速和急速反向的传动中。\\
+综上，链传动主要用于低速重载，中心距大，工作环境恶劣，不宜使用齿轮传动的场合。\\
+\vspace*{1em}
+根据用途分为传动链、输送链和起重链。\\
+此处主要为传动链中的滚子链。\\
+
+\subsection{链传动的结构特点}
+\subsubsection{滚子链}
+滚子链结构见【P178，图9-2】。\\
+内链板与套筒之间、外链板和销轴之间采用过盈配合。\\
+滚子和套筒、套筒和销轴之间采用间隙配合。\\
+链板制成8字形，\ColorImportant{使各个横截面具有相近的抗拉强度}，同时减小链的质量，减小惯性。\\
+链节数是偶数时，接头处可用开口销（大节距）或弹簧锁片（小截距）；当链接数是奇数时，使用过度链节，会承受附加弯矩，因此\ColorImportant{避免奇数链节}。\\
+我国的链节距使用英尺单位，见【P179，表9-1】。\\
+滚子链的标记为：\\
+\centering 链号-排数-整链链节数\space{}标准编号\\
+\raggedright 节距、滚子外径和内链节内宽时啮合的基本参数，节距是主要参数。\\
+节距增大其他尺寸跟着增大，可传递的功率也增大。\\
+所有原件都应经过热处理。\\
+
+\subsubsection{齿形链}
+见【P180，图9-5】。\\
+传动平稳、噪声小、承受冲击性好、效率高、工作可靠、用于高速、大传动比、小中心距、结构复杂、难以制造、成本较高。\\
+
+\subsection{滚子链链轮的结构和材料}
+链轮由轮齿、轮缘、轮辐和轮毂组成。\\
+链轮设计主要为了确定结构尺寸、材料和热处理。\\
+\subsubsection{链轮齿形}
+齿槽圆弧半径：最大齿槽、最小齿槽\\
+\centering$0.008d_1(z^2+180)\leqslant r_e\leqslant0.12d_1(z+2)$\\
+\raggedright 齿沟圆弧半径：最小齿槽、最大齿槽\\
+\centering$0.505d_1\leqslant r_i\leqslant0.505d_1+0.069\sqrt[3]{d_1}$\\
+\raggedright 齿沟角：最大齿槽、最小齿槽\\
+\centering$120^\circ-\frac{90^\circ}{z}\leqslant\alpha\leqslant140^\circ-\frac{90^\circ}{z}$\\
+
+\raggedright\subsubsection{链轮的基本参数和主要尺寸}
+分度圆直径：\\
+\centering$d=\frac{p}{\sin(\frac{180^\circ}{z})}$\\
+\raggedright 齿顶圆直径：\\
+\centering$d+p(1-\frac{1.6}{z})-d_1\leqslant d_a\leqslant d+1.25p-d_1$\\
+\raggedright 齿根圆直径：\\
+\centering$d_f=d-d_1$\\
+\raggedright 齿高：\\
+\centering$0.5(p-d_1)\leqslant h_a\leqslant0.625p-0.5d_1+\frac{0.8p}{z}$\\
+\raggedright 齿高为节距多边形以上部分的齿高，见【P181，表9-2】。\\
+最大齿侧凸圆直径：\\
+\centering$d_g=p\cot\frac{180^\circ}{z}-1.04h_2-0.76$\\
+\raggedright $h_2$为内链板高度。\\
+$d_a$、$d_g$取整数，其他尺寸一丝。\\
+滚子链链轮轴向齿廓尺寸见【P182，表9-4】。\\
+
+\subsubsection{链轮的结构}
+小直径的链轮可制成整体式、中等尺寸可制成孔板式、大尺寸可将齿圈用螺栓连接或焊接在轮毂上。\\
+
+\subsubsection{链轮的材料}
+小链轮啮合次数比大链轮多，所受冲击也大，故因采用较好材料，见【P183，表9-5】。\\
+
+\subsection{链传动的工作情况分析}
+\subsubsection{链传动的运动特性}
+由于链由刚性链节通过通过销轴链接而成，啮合后链节成为多边形。\\
+边长等于链轮节距，边数等于齿数。\\
+因此链的平均速度为：\\
+\centering$v=\frac{z_1n_1p}{60\times1000}=\frac{z_2n_2p}{60\times1000}$\\
+\raggedright 链的平均传动比为
+\centering$i=\frac{n_1}{n_2}=\frac{z_2}{z_1}$\\
+\raggedright 由于链传动没有相对滑动，所以平均链速和平均传动比为常数，但\ColorImportant{瞬时链速和瞬时传动比均非常数}。\\
+由【P184，图9-7】可知：\\
+\centering$v_x=v_1\cos\beta=R_1\omega_1\cos\beta$\\
+$v_{y1}=v_1\sin\beta=R_1\omega_1\sin\beta$\\
+$v_2=R_2\omega_2=\frac{v_x}{\cos\gamma}$\\
+$\omega_2=\frac{v_x}{R_2\cos\gamma}=\frac{R_1\omega_1\cos\beta}{R_2\cos\gamma}$\\
+$i=\frac{\omega_1}{\omega_2}=\frac{R_2\cos\gamma}{R_1\cos\beta}$\\
+\raggedright 速度分量周期性变化。\\
+
+\subsubsection{链传动的动载荷}
+链速引起的惯性力\\
+\centering$F_d1=ma_c$\\
+\raggedright m为紧边链条质量\\
+若主动链轮匀速转动\\
+\centering$a_c=\frac{dv_x}{dt}=-R_1\omega_1^2\sin\beta$\\
+$(a_c)_{\max}=\frac{\omega_1^2p}{2}$\\
+\raggedright 从动链轮因角加速度引起的惯性力：\\
+\centering$F_{d2}=\frac{J}{R_2}\frac{d\omega_2}{dt}$\\
+\raggedright $J$为从动系统的转动惯量。\\
+链轮的转速越高，节距越大，齿数越少，则惯性力越大，相应的动载荷越大。\\
+啮合瞬间的相对速度会引起冲击和振动，节距越大，链轮转速越高，冲击越严重。\\
+
+\subsubsection{链传动的受力分析}
+若不计动载荷，则紧边和松边拉力分别为：\\
+$$\begin{cases}
+	F_1=&F_e+F_c+F_f\\
+	F_2=&F_c+F_f
+\end{cases}$$
+其中$F_e$为有效圆周力、$F_c$为离心力引起的拉力、$F_f$为悬垂拉力。\\
+\centering$F_e=1000\frac{P}{v}$\\
+$F_f=max(F'_f,F''_f)$\\
+\raggedright 其中\\
+$$\begin{cases}
+	F'_f=&K_fqa\times10^{-2}\\
+	F''_f=&(K_f+\sin\alpha)qa\times10^{-2}
+\end{cases}$$
+其中$K_f$为垂度系数，见【P187，图9-9】。\\
+
+\subsection{滚子链传动的设计计算}
+\subsubsection{链传动的失效形式}
+1. 链的疲劳破坏\\
+链板疲劳断裂，套筒和滚子因冲击出现点蚀。\\
+2. 链条铰链的磨损\\
+铰链中的轴套和套筒间不仅承受较大的压力，而且还有相对转动，导致铰链磨损，使链节距增大，链条拉长，使松边垂度变化，增大运动的不均匀性和动载荷，引起跳齿。\\
+3. 链条铰链的胶合\\
+链速较高时，链节受到的冲击增大，铰链销轴和套筒在高压下接触，同时两者相对转动产生摩擦热，导致热胶合，限制了极限转速。\\
+4. 链条的静力破坏\\
+链速较低时（小于0.6），如果链条负载不增加而变形持续增加，即认为链条正在被破坏。限制了最大载荷。\\
+
+\subsubsection{链传动的额定功率}
+1. 极限功率曲线\\
+试验下不同转速的极限功率。见【P188， 图9-10】。\\
+2. 额定功率曲线\\
+试验条件：
+1）安装在水平平行轴上。\\
+2）主动链轮齿数为19。\\
+3）无过度链节的单排滚子链。\\
+4）链条长120节。\\
+5）链条预期寿命15000h。\\
+6）传动减速比为3。\\
+7）工作温度-5到70。\\
+8）链轮共面，保持规定的张紧度。\\
+9）平稳运转，无过载、冲击、频繁启动。\\
+10）清洁的环境，合适的润滑。\\
+
+\subsubsection{链传动的参数选择}
+1. 链轮齿数\\
+小链轮齿数过少会增加运动的不均匀性和动载荷；退出啮合时转角增大；链传动圆周力增大，加速铰链和链轮的磨损。\\
+最少齿数为9，一般大于17，对于高速不少于25，轮齿淬硬。\\
+小齿轮齿数过多，则实现相同传动比时，大链轮会过大，容易脱链。\\
+最大齿数为150，一般不超过114。\\
+\ColorImportant{两齿数应为互质的奇数}。\\
+为使磨损均匀，所以选奇数。\\
+2. 传动比\\
+一般小于6，常取2~3.5，小链轮包角不小于120°。\\
+3. 中心距\\
+中心距过小，应力循环过快，且每个齿的载荷增大，易跳齿和脱链。\\
+中心距过大，松边垂度过大，传动时松边颤动。\\
+一般取(30~50)p，最大80p，有张紧装置或托板时可大于80p，若中心距不能调整，则约等于30p。\\
+4. 链的节距和排数\\
+节距越大，承载能力越高，但尺寸增大，多边形效应显著，振动冲击噪音显著。\\
+速度高功率大，宜用小节距，多排链；中心距小，传动比大，宜用小节距，多排链；中心距大，传动比小，大节距单排链。\\
+
+\subsubsection{滚子链传动的设计计算}
+1. 选择链轮齿数，确定传动比\\
+\centering$i=\frac{z_2}{z_1}$\\
+\raggedright 2. 计算当量单排链的计算功率\\
+\centering$P_ca=\frac{K_AK_z}{K_p}P$\\
+\raggedright $K_z$为主动轮齿轮系数。\\
+\centering$K_z=(\frac{19}{z_1})^{1.08}$\\
+\raggedright$K_p$为多排链系数，双排链时为1.7，三排链时2.5。\\
+工作系数见【P191，表9-6】\\
+3. 确定链条型号和节距\\
+查【P189，图9-11】。\\
+4. 计算链节数和中心距\\
+初选中心距为30~50p。\\
+\centering$L_{p0}=2\frac{a_0}{p}+\frac{z_1+z_2}{2}+(\frac{z_2-z_1}{2\pi})^2\frac{p}{a_0}$\\
+\raggedright 将链节数$L_{p0}$圆整为偶数$L_p$\\
+链传动的最大中心距为\\
+\centering$a_{max=f_1p[2L_p-(z_1+z_2)]}$\\
+\raggedright 两链轮齿数相等时\\
+\centering$a_{max}=p(\frac{L_p-z}{2})$\\
+\raggedright 5. 计算链速，确定润滑方式\\
+\centering$v=\frac{z_1n_1p}{60\times1000}=\frac{z_2n_2p}{60\times1000}$\\
+\raggedright 由【P192，图9-13】。\\
+6. 计算链传动作用在轴上的压轴力\\
+\centering$F_p\approx K_{Fp}F_e$\\
+\raggedright $K_{Fp}$为压轴力系数，对于水平传动为1.15，对于垂直传动为1.05。\\
+
+\subsection{链传动的布置、张紧、润滑和防护}
+\subsubsection{链传动的布置}
+见【P193，表9-8】。\\
+
+\subsubsection{链传动的张紧}
+1. 调中心距\\
+2. 去掉两个链节\\
+3. 张紧轮，链轮或滚轮\\
+
+\subsubsection{链传动的润滑}
+见【P194，表9-9】。\\
+不便使用润滑油可用润滑脂。\\
+
+\subsubsection{链传动的防护}
+应用防护罩封闭，避免灰尘保证润滑。\\
+
+
+
+\section{齿轮传动}
+\subsection{概述}
+本章介绍渐开线齿轮。\\
+优点：效率高、结构紧凑、工作可靠寿命长、传动比稳定。\\
+开式齿轮传动：没有防护罩，齿轮暴露在外边。\\
+半开式齿轮传动：简易防护罩，可以将齿轮浸泡在油池里。\\
+闭式齿轮传动：装在精密加工且封闭的箱体里，润滑防护等级最好。\\
+
+\subsection{齿轮传动的失效形式及设计准则}
+齿轮硬度大于350HBS或38HRC称为硬齿面齿轮，否则为软齿面齿轮。\\
+淬火、钢齿轮、铸铁齿轮轮齿脆。\\
+调制、常化的优质碳钢、合金钢齿轮轮齿较韧。\\
+\subsubsection{失效形式}
+1. 轮齿折断\\
+原因：\\
+轮齿受载后齿根处弯曲应力大，齿根过度部分的形状突变产生应力集中，超过疲劳极限后在根部产生裂纹。\\
+突加载荷也会过载折断，磨损导致齿厚过分减薄发生折断。\\
+齿宽较小的齿轮发生整齿折断；齿宽较大的齿轮和斜齿轮、人字齿齿轮发生局部折断。\\
+措施：\\
+采用正变位齿轮，增加齿根强度。\\
+使齿根过渡曲线变化更为平缓及消除加工刀痕，减小齿根应力集中。\\
+增大轴及支撑的刚性，使轮齿接触线上的受载较为均匀。\\
+采用合适的热处理使齿心材料具有足够的韧性。\\
+采用喷丸、滚压等工艺对齿根表层进行强化处理。\\
+\vspace*{1em}
+2. 齿面磨损\\
+齿面摩擦或啮合齿面间落入磨料性物质，使齿面逐渐磨损。
+这是开式齿轮的主要失效形式。\\
+磨损引起的齿廓变形和齿厚减薄，产生振动和噪声，甚至因轮齿过薄而断裂。\\
+措施：\\
+采用闭式齿轮传动，提高齿面硬度，降低齿面粗糙度值，保持润滑。\\
+\vspace*{1em}
+3. 齿面点蚀\\
+齿轮工作时，在循环应力、齿面摩擦力及润滑剂的反复作用下，在齿面或内表面产生微小裂纹。\\
+相对滑动速度高、粘度大时，齿面间容易形成油膜，有效接触面积大，接触应力小，点蚀不易发生。\\
+在轮齿的节线附近，相对滑动速度低，形成油膜的条件差，对于直齿圆柱齿轮，此时仅有一队齿啮合，轮齿受力大。\\
+靠近节线处的齿根面的抗点蚀破坏的能力最弱。\\
+措施：\\
+提高齿轮材料硬度。\\
+加注润滑油，减小摩擦。且在合理限度内，润滑油的粘度越高效果越好。\\
+但对高速齿轮传动，粘度不宜过高。\\
+\vspace*{1em}
+4. 齿面胶合\\
+原因：\\
+齿面间未能有效的形成油膜，齿面金属直接接触。\\
+相对滑动时，相互粘连的金属沿滑动方向相互撕扯，形成划痕。\\
+会引起噪声和振动，导致传动性能下降，甚至失效。\\
+高速重载齿轮因摩擦，导致局部温度上升，造成金属直接接触并相互黏着，称为齿面热胶和；低速重载齿轮传动（v小于4），由于齿面间压力很高，导致油膜破裂，称为齿面冷胶合。\\
+措施：\\
+采用正变位齿轮，减小模数，降低齿高以减小滑动速度，提高齿面硬度，降低齿面粗糙度值。\\
+采用抗胶合能力强的齿轮材料。\\
+在润滑油中加入抗胶合能力强的极压添加剂等。\\
+\vspace*{1em}
+5. 塑性变形\\
+原因：轮齿过软时，若轮齿上的载荷所产生的应力超过材料的屈服极限，则轮齿发生塑性变形。\\
+轮齿受有冲击的载荷作用，在较软齿面接触部分会出现压痕，齿面材料可能发生金属流动。\\
+措施：\\
+提高齿面硬度。\\
+采用高粘度的或有添加剂的润滑油。\\
+
+\subsubsection{设计准则}
+只按\ColorImportant{保证齿根弯曲疲劳强度}和\ColorImportant{保证齿面接触疲劳强度计算}。\\
+对于功率高（大于75kW）的传动，还应做散热能力计算。\\
+对其他部分如轮圈、轮辐、轮毂仅在重要场合进行强度计算，否则仅作结构设计。\\
+
+\subsection{齿轮的材料及其选择原则}
+齿面应具有足够硬度，齿心应具有足够强度和韧性。\\
+齿轮材料也应哦、有良好机械加工和热处理工艺性、经济性。\\
+\subsubsection{常用的齿轮材料}
+1. 钢\\
+1） 锻钢：\\
+经热处理后切齿的轮齿所用的锻钢\\
+用于对强度速度精度要求都不高的齿轮。采用软齿面以便于切齿，并使刀具不至迅速磨损变钝。\\
+正火或调制后切齿。\\
+精度一般为8，精切后为7。\\
+制造简便、经济、生产率高\\
+需进行精加工的齿轮所用的锻钢\\
+用于高速、重载及精密机器。\\
+要求轮齿高强度、齿面高硬度，进行磨齿。\\
+先切齿再表面硬化再精加工，精度可达5级到4级。\\
+价格较贵。\\
+热处理可采用表面淬火、渗碳、氮化、软氮化及氰化。\\
+\vspace*{1em}
+2） 铸钢\\
+耐磨性强度都很好，但应退火及正火处理。\\
+常用于尺寸较大的齿轮。\\
+\vspace*{1em}
+2. 铸铁\\
+质地脆，抗冲击及耐磨性较差，但扛胶合点蚀性能好。灰铸铁常用于工作平稳，速度较低，功率不大的场合。\\
+\vspace*{1em}
+3. 非金属材料\\
+对高速轻载及精度不高的齿轮传动，为了降低噪音，常用非金属材料做小齿轮。\\
+
+\subsubsection{齿轮材料的选择原则}
+1. 齿轮材料必须满足工作条件的要求。\\
+2. 应考虑齿轮尺寸的大小、毛坯成型方法及热处理和制造工艺。\\
+3. 正火碳钢，不论毛坯的制作工艺如何，只能用于制作在载荷平稳或轻度冲击下工作的齿轮。\\
+调制碳钢可用于制作在中等冲击下工作的齿轮。\\
+4. 合金钢用于制作高速重载并在冲击载荷下的齿轮。\\
+5. 飞行器中的齿轮传动，要求齿轮尺寸尽可能小，应采用表面硬化处理的高强度合金钢。\\
+6. 金属制的软齿面齿轮，配对的齿面硬度差应保持为30~50HBW或更多。\\
+当硬度差较大，且速度较高时，较硬的齿面会对较软的齿面产生冷作硬化，从而提高大齿轮齿面的疲劳极限。\\
+但较硬的齿面，表面粗糙度应相应减小。\\
+
+\subsection{齿轮传动的计算载荷}
+\centering$F_{ca}=KF_n$\\
+\raggedright$K$为载荷系数，它等于使用系数、动载系数、齿间载荷分配系数、齿向载荷分配系数的乘积。
+\centering$K=K_AK_VK_\alpha K_\beta$\\
+
+\raggedright\subsubsection{使用系数}
+通过使用系数来表征运行状态的影响。\\
+数值见表【p205，表10-2】。\\
+
+\subsubsection{动载系数}
+%制造及装配的误差，轮齿受载后产生弹性形变\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+%\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright\centering$$\\\raggedright
+
+\subsubsection{齿间载荷分配系数}
+
+\subsubsection{齿向载荷分布系数}
+
+\subsection{标准直齿圆柱齿轮传动的强度计算}
+\subsubsection{轮齿的受力分析}
+
+\subsubsection{齿根弯曲疲劳强度计算}
+
+\subsubsection{齿面接触疲劳强度计算}
+
+\subsubsection{齿轮传动的强度计算说明}
+
+\subsection{齿轮传动的精度、设计参数与许用应力}
+\subsubsection{齿轮传动的精度及其选择}
+
+\subsubsection{齿轮传动设计参数的选择}
+
+\subsubsection{齿轮的许用应力}
+
+\subsection{标准斜齿圆柱齿轮传动的强度计算}
+\subsubsection{轮齿的受力分析}
+
+\subsubsection{斜齿圆柱齿轮强度的计算原理}
+\subsubsection{齿根弯曲疲劳强度计算}
+
+\subsubsection{齿面接触疲劳强度计算}
+
+
+\subsection{标准直齿锥齿轮传动的强度计算}
+\subsubsection{设计参数}
+
+\subsubsection{轮齿的受力分析}
+
+\subsubsection{齿根弯曲疲劳强度计算}
+
+\subsubsection{齿面接触疲劳强度计算}
+
+\subsubsection{曲齿锥齿轮传动简介}
+
+\subsection{变位齿轮传动强度计算概述}
+
+\subsection{齿轮的结构设计}
+
+\subsection{齿轮传动的润滑}
+\subsubsection{齿轮传动的润滑方式}
+
+\subsubsection{润滑剂的选择}
+
+
+\subsection{圆弧齿圆柱齿轮传动简介}
+
+
+
+\section{蜗杆传动}
+\subsection{蜗杆传动的类型}
+\subsubsection{圆柱蜗杆传动}
+
+\subsubsection{环面蜗杆传动}
+
+\subsubsection{锥蜗杆传动}
+
+\subsubsection{蜗杆传动类型选择的原则}
+
+\subsection{普通圆柱蜗杆传动的基本参数和几何尺寸计算}
+\subsubsection{普通圆柱蜗杆传动的基本参数及其选择}
+
+\subsubsection{蜗杆传动的几何尺寸计算}
+
+\subsection{普通圆柱蜗杆传动传动承载能力计算}
+\subsubsection{蜗杆传动的失效形式、设计准则及常用材料}
+
+\subsubsection{蜗杆传动的受力分析}
+
+\subsubsection{蜗杆传动的强度计算}
+
+\subsubsection{蜗杆的刚度计算}
+
+\subsubsection{普通圆柱蜗杆传动的精度等级及其选择}
+
+\subsection{圆弧圆柱蜗杆传动设计计算}
+\subsubsection{概述}
+
+\subsubsection{圆弧圆柱蜗杆传动强度计算}
+
+
+\subsection{普通圆柱蜗杆传动的效率、润滑及热平衡计算}
+\subsubsection{蜗杆传动的效率}
+
+\subsubsection{蜗杆传动的润滑}
+
+\subsubsection{蜗杆传动的热平衡计算}
+
+
+\subsection{圆柱蜗杆和涡轮的设计结构}
+
+
+
+\section{滑动轴承}
+\subsection{概述}
+
+\subsection{滑动轴承的主要结构形式}
+\subsubsection{整体式径向滑动轴承}
+
+\subsubsection{对开式镜像滑动轴承}
+
+\subsubsection{直推滑动轴承}
+
+\subsection{滑动轴承的失效形式及常用材料}
+
+\subsubsection{滑动轴承的失效形式}
+
+\subsubsection{轴承材料}
+
+
+\subsection{轴瓦结构}
+\subsubsection{轴瓦的形式和构造}
+
+\subsubsection{轴瓦的定位}
+
+\subsubsection{油孔及油槽}
+
+\subsection{滑动轴承润滑剂的选用}
+\subsubsection{润滑脂及其选用}
+
+\subsubsection{润滑油及其选择}
+
+\subsubsection{固体润滑剂}
+
+\subsection{不完全流体润滑滑动轴承设计计算}
+\subsubsection{径向滑动轴承的计算}
+
+\subsubsection{止推滑动轴承的计算}
+
+
+\subsection{流体动力润滑径向滑动轴承设计计算}
+\subsubsection{流体动力润滑的基本方程}
+
+\subsubsection{径向滑动轴承形成流体动力润滑的过程}
+
+\subsubsection{径向滑动轴承的主要几何关系}
+
+\subsubsection{径向滑动轴承工作能力计算简介}
+
+\subsubsection{参数选择}
+
+\subsubsection{流体动力润滑径向滑动轴承设计举例}
+
+\subsection{其他形式滑动轴承简介}
+\subsubsection{自润滑轴承}
+
+\subsubsection{多油楔轴承}
+
+\subsubsection{流体静压轴承}
+
+\subsubsection{气体润滑轴承}
+
+\subsubsection{磁悬浮轴承}
+
+
+
+\section{滚动轴承}
+\subsection{概述}
+\subsection{滚动轴承的主要类型、性能和特点}
+\subsubsection{滚动轴承的主要型号、性能与特点}
+
+\subsubsection{滚动轴承的代号}
+
+\subsection{滚动轴承类型的选择}
+\subsubsection{轴承的载荷}
+
+\subsubsection{轴承的转速}
+
+\subsubsection{轴承的调心性能}
+
+\subsubsection{轴承的安装和拆卸}
+
+\subsection{滚动轴承的工作情况}
+\subsubsection{轴承工作时轴承元件上的载荷分布}
+
+\subsubsection{轴承工作时轴承元件上的载荷及应力的变化}
+
+\subsubsection{轴向载荷对载荷分布的影响}
+
+\subsection{滚动轴承尺寸的选择}
+\subsubsection{滚动轴承的失效形式界定基本寿命}
+
+\subsubsection{滚动轴承的基本而定动载荷}
+
+\subsubsection{滚动轴承寿命的计算公式}
+
+\subsubsection{滚动轴承的当量动载荷}
+
+\subsubsection{角接触轴承和圆锥滚子轴承的径向载荷与轴向载荷的计算}
+
+\subsubsection{不稳定载荷和不稳定转速时轴承的寿命计算}
+
+\subsubsection{滚动轴承的静载荷}
+
+\subsubsection{不同可靠度时滚动轴承的计算}
+
+\subsection{轴承装置的设计}
+
+\subsubsection{支承部分的刚度和同心度}
+
+\subsubsection{滚动轴承的轴向定位与紧固}
+
+\subsubsection{轴承的配置}
+
+\subsubsection{轴承游隙及轴上零件位置的调整}
+
+\subsubsection{滚动轴承的配合}
+
+\subsubsection{滚动轴承的预紧}
+
+\subsubsection{滚动轴承的润滑}
+
+\subsubsection{滚动轴承的密封装置}
+
+\subsection{其他}
+见书，此处忽略\\
+
+
+
+\section{联轴器和离合器}
+\subsection{联轴器的种类和特性}
+
+\subsubsection{刚性联轴器}
+
+\subsubsection{挠性联轴器}
+
+\subsection{联轴器的选择}
+
+\subsubsection{选择联轴器的选择}
+
+\subsubsection{计算联轴器的计算转矩}
+
+\subsubsection{确定联轴器的型号}
+
+\subsubsection{校核最大转速}
+
+\subsubsection{协调轴孔直径}
+
+\subsubsection{规定部件相应的安装精度}
+
+\subsubsection{进行必要的校核}
+
+\subsection{离合器}
+
+\subsubsection{嵌合式离合器}
+
+\subsubsection{圆盘摩擦离合器}
+
+\subsection{安全联轴器及安全离合器}
+
+\subsubsection{剪切销安全联轴器}
+
+\subsubsection{滚珠安全离合器}
+
+\subsection{特殊用途及特殊结构的联轴器离合器}
+
+\subsubsection{超越离合器}
+
+\subsubsection{离心离合器}
+
+\subsubsection{电磁粉末离合器}
+
+
+
+
+\section{轴}
+\subsection{概述}
+
+\subsubsection{轴的用途及分类}
+
+\subsubsection{周设计的主要内容}
+
+\subsubsection{轴的材料}
+
+\subsection{轴的结构设计}
+
+\subsubsection{拟定轴上零件的装配方案}
+
+\subsubsection{轴上零件的定位}
+
+\subsubsection{各轴段直径和长度的确定}
+
+\subsubsection{提高轴的强度的常用措施}
+
+\subsubsection{轴的结构工艺性}
+
+\subsection{轴的计算}
+
+\subsubsection{轴的强度校核计算}
+
+\subsubsection{轴的刚度校核计算}
+
+\subsubsection{轴的振动及振动稳定性的概念}
+
+
+
+\end{document}
