@@ -1316,16 +1316,29 @@ $\alpha_{a1} = \alpha_{t2}$\\
 \centering$F_{t1}=F_{a2}=\frac{2T_1}{d_1}$\\
 $F_{a1}=F_{t2}=\frac{T_2}{d_2}$\\
 $F_{r1}=F_{r2}=F_{t2}\tan\alpha$\\
-%$$\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-%\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\
+$F_n=\frac{F_{a1}}{\cos\alpha_n\cos\gamma}=\frac{F_{t1}}{\cos\alpha_n\cos\gamma}=\frac{2T_2}{d_2\cos\alpha_n\cos\gamma}$\\
 
-\subsubsection{蜗杆传动的强度计算}
+\raggedright\subsubsection{蜗杆传动的强度计算}
+1. 接触疲劳强度计算\\
+\centering$\sigma_H=480\sqrt{\frac{KT_2}{d_1m^2z^2_2}}\leqslant[\sigma_H]$\\
+\raggedright $K=K_AK_vK_\beta$\\
+\centering$m^2d_1\geqslant KT_2(\frac{480}{z_2[\sigma_H]})^2$\\
+\raggedright 2. 弯曲疲劳强度计算\\
+\centering$\sigma_F=\frac{1.53KT_2}{d_1d_2m}Y_{Fa2}Y_\beta\leqslant[\sigma_F]$\\
+$m^2d_1\geqslant\frac{1.53KT_2}{z_2[\sigma_F]}Y_{Fa2}Y_\beta$\\
 
-\subsubsection{蜗杆的刚度计算}
+\raggedright\subsubsection{蜗杆的刚度计算}
+\centering$y=\frac{\sqrt{F^2_{t1}+F^2_{r1}}}{48EI}L'^3\leqslant[y]$\\
 
-\subsubsection{普通圆柱蜗杆传动的精度等级及其选择}
+\raggedright\subsubsection{普通圆柱蜗杆传动的精度等级及其选择}
+一般以6~9级用的多。\\
+6：v>5\\
+7：v<7.5\\
+8：v<3\\
 
 \subsection{圆弧圆柱蜗杆传动设计计算}
+%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+%\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\
 \subsubsection{概述}
 
 \subsubsection{圆弧圆柱蜗杆传动强度计算}
