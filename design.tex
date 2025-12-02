@@ -1338,10 +1338,15 @@ $\alpha_{a1} = \alpha_{t2}$\\
 \subsubsection{蜗杆传动的失效形式、设计准则及常用材料}
 蜗轮材料选用：\\
 铸造锡青铜>铸造铝铁青铜>灰铸铁。\\
-蜗杆材料选用：\\
-
+\vspace*{1em}
 失效形式大体与齿轮传动一致。\\
-对闭式传动因额外进行热平衡计算。\\
+对闭式传动应额外进行热平衡计算。\\
+\vspace*{1em}
+当材料为灰铸铁或铝铁青铜时，主要失效形式为胶合，与滑动速度有关。\\
+当材料为锡青铜时，主要失效形式为接触疲劳，与应力循环次数有关。\\
+\vspace*{1em}
+轴的刚度必须验算。\\
+
 
 \subsubsection{蜗杆传动的受力分析}
 \centering$F_{t1}=F_{a2}=\frac{2T_1}{d_1}$\\
@@ -1419,7 +1424,8 @@ $\eta_1=\frac{\tan\gamma}{\tan(\gamma+\varphi_v)}$\\
 \subsubsection{蜗杆传动的热平衡计算}
 保持正常工作所需的散热面积：\\
 \centering$S=\frac{1000P(1-\eta)}{\alpha_d(t_0-t_a)}$\\
-\raggedright 温度大于80度或散热面积不足时可加装散热片或在尾部增加风扇。\\
+\raggedright 温度大于80度或散热面积不足时可加装散热片或在蜗杆尾部增加风扇。\\
+油池内安装冷却水管。\\
 
 
 \subsection{圆柱蜗杆和涡轮的设计结构}
@@ -1514,14 +1520,28 @@ $\eta_1=\frac{\tan\gamma}{\tan(\gamma+\varphi_v)}$\\
 
 \subsection{不完全流体润滑滑动轴承设计计算}
 \subsubsection{径向滑动轴承的计算}
-%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-%\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\
+1. 验算轴承的平均压力\\
+\centering$p=\frac{F}{dB}\leqslant[p]$\\
+\raggedright 2. 验算轴承的$pv$\\
+\centering$pv=\frac{Fn}{19100B}\leqslant[pv]$\\
+\raggedright 3. 验算滑动速度\\
+\centering$v\leqslant[v]$\\
+\raggedright 上述许用值见【P291，表12-2】。\\
 
 \subsubsection{止推滑动轴承的计算}
+1. 验算轴承的平均压力\\
+\centering$p=\frac{F_a}{z\frac{\pi}{4}(d_2^2-d_2^1)}\leqslant[p]$\\
+\raggedright 2. 验算轴承的$pv$\\
+\centering$pv=\frac{nF_a}{30000z(d_2-d_1)}\leqslant[pv]$\\
+\raggedright 上述许用值见【P297，表12-5】。\\
 
 
 \subsection{流体动力润滑径向滑动轴承设计计算}
 \subsubsection{流体动力润滑的基本方程}
+形成流体动力润滑的必要条件：\\
+1：相对滑动的两表面间必须形成收敛的楔形间隙。\\
+2：被油膜分开的两表面有足够的相对滑动速度，且运动方向使润滑油从大口流进，小口流出。\\
+3：润滑油有一定粘度，且供油充分。\\
 
 \subsubsection{径向滑动轴承形成流体动力润滑的过程}
 
@@ -1548,12 +1568,36 @@ $\eta_1=\frac{\tan\gamma}{\tan(\gamma+\varphi_v)}$\\
 
 \section{滚动轴承}
 \subsection{概述}
+滚动轴承由内圈、外圈、滚动体、保持架组成。\\
+保持架的作用是均匀隔开滚动体，若无保持架，相邻滚动体处较大的相对滑动速度会引起磨损。\\
+优点：\\
+1. 使机器启动力矩小。\\
+2. 径向游隙小，运转精度高。\\
+3. 宽度比滑动轴承小。\\
+4. 大多数滚动轴承能同时受径向和轴向载荷，轴承结构简单。\\
+5. 消耗润滑剂少，便于密封，易于维护。\\
+6. 标准化程度高，成本较低。\\
+
+缺点：\\
+1. 承受冲击载荷能力差。\\
+2. 高速重载下轴承寿命较低。\\
+3. 振动及噪声较大。\\
+4. 径向尺寸比滑动轴承大。\\
+
+
 \subsection{滚动轴承的主要类型、性能和特点}
 \subsubsection{滚动轴承的主要型号、性能与特点}
+根据外载荷可分为承受径向载荷的向心轴承和承受轴向载荷的推力轴承。\\
+具体见表【P319，表13-1】。\\
+常用类别为36715N。\\
 
 \subsubsection{滚动轴承的代号}
+\ColorImportant{代号构成见【P321，表13-2】。}\\
+
 
 \subsection{滚动轴承类型的选择}
+选择因素：载荷、转速、调心性能、安装拆卸。\\
+
 \subsubsection{轴承的载荷}
 
 \subsubsection{轴承的转速}
@@ -1562,47 +1606,117 @@ $\eta_1=\frac{\tan\gamma}{\tan(\gamma+\varphi_v)}$\\
 
 \subsubsection{轴承的安装和拆卸}
 
+
 \subsection{滚动轴承的工作情况}
 \subsubsection{轴承工作时轴承元件上的载荷分布}
 
 \subsubsection{轴承工作时轴承元件上的载荷及应力的变化}
+轴承承受稳定的脉冲循环载荷。\\
 
 \subsubsection{轴向载荷对载荷分布的影响}
 
-\subsection{滚动轴承尺寸的选择}
-\subsubsection{滚动轴承的失效形式界定基本寿命}
 
-\subsubsection{滚动轴承的基本而定动载荷}
+\subsection{滚动轴承尺寸的选择}
+\subsubsection{滚动轴承的失效形式及基本寿命}
+正常失效形式为内外圈或滚动体的点蚀。\\
+轴承的寿命指其中一个部件出现点蚀之前，一套圈相对另一套圈的转数。\\
+以10\%的轴承失效的寿命基本额定寿命。\\
+
+\subsubsection{滚动轴承的基本额定动载荷}
+使轴承寿命为$10^6r$使轴承能承受的载荷。\\
 
 \subsubsection{滚动轴承寿命的计算公式}
+\centering$L_{10}=(\frac{C}{P})^\epsilon$\\
+$L_h=\frac{10^6}{60n}(\frac{C}{P})^\epsilon$\\
+\raggedright $L_{10}$的单位为$10^6r$，$L_h$的单位为h\\
+对于球轴承$\epsilon=3$，对于滚子轴承$\epsilon=\frac{10}{3}$\\
+\centering$C=P\sqrt[\epsilon]{\frac{60nL'_h}{10^6}}$\\
+\raggedright 若在较高温度（120°C）下工作，应引入温度系数。\\
+\centering$C_t=f_tC$\\
 
-\subsubsection{滚动轴承的当量动载荷}
+\raggedright\subsubsection{滚动轴承的当量动载荷}
+为了便于计算，将实际的载荷转化为与基本额定动载荷条件相同的当量载荷。\\
+\centering$P=XF_r+YF_a$\\
+\raggedright X为径向动载荷系数，Y为轴向动载荷系数，见表【P331，表13-5】。\\
+实际计算时因引入动载荷系数。\\
+\centering$P=f_d(XF_r+YF_a)$\\
+\raggedright 动载荷系数$f_d$见表【P332，表13-6】。\\
 
 \subsubsection{角接触轴承和圆锥滚子轴承的径向载荷与轴向载荷的计算}
+由外界径向载荷$F_{re}$计算出$F_{r1}F_{r2}$。\\
+按照【P332，表13-7】计算出$F_d$。\\
+轴平衡时应满足$F_{ae}+F_{d2}=F_{d1}$。\\
+若不满足则一边轴承被放松，一边被压紧。\\
 
 \subsubsection{不稳定载荷和不稳定转速时轴承的寿命计算}
+\centering$n_m=\sum\limits_{i=1}^sn_iq_i$\\
+$P_m=\sqrt[\epsilon]{\frac{\sum\limits_{i=1}^sn_iq_iP_i^\epsilon}{n_m}}$\\
+$L_h=\frac{10^6}{60n_m}(\frac{C}{P_m})^\epsilon$\\
 
-\subsubsection{滚动轴承的静载荷}
+\raggedright\subsubsection{滚动轴承的静载荷}
+对于不怎么转动的轴承，失效形式为塑性变形。\\
+失效条件为基本额定静载荷。\\
+\centering$C_0\geqslant S_0P_0$\\
+$P_0=X_0F_r+Y_0F_a$\\
+\raggedright 各数值查手册。\\
 
 \subsubsection{不同可靠度时滚动轴承的计算}
+若对可靠度的要求不同，则须通过可靠度寿命修正系数$a_0$来修正。\\
+\centering$L_{nm}=a_1L_{10}$\\
+$L_{nm}=\frac{10^6a_1}{60n}(\frac{C}{P})^\epsilon$\\
 
-\subsection{轴承装置的设计}
 
+\raggedright\subsection{轴承装置的设计}
 \subsubsection{支承部分的刚度和同心度}
+外壳和轴承座孔壁均应有足够的厚度。\\
+外壳悬臂尽可能缩短。\\
+保持同心。\\
 
 \subsubsection{滚动轴承的轴向定位与紧固}
+轴承内圈常以轴肩作为轴向定位面。\\
+此时轴肩高度应低于轴承内圈厚度。\\
+外圈定位紧固方法：\\
+1. 外壳孔内的凸肩定位，用嵌入外壳沟槽内的孔用弹性挡圈紧固。\\
+。。。见书。\\
 
 \subsubsection{轴承的配置}
+常用配置：\\
+1. 双支点各单向固定。\\
+2. 一支点双向固定。\\
+3. 两端游动支承。\\
 
 \subsubsection{轴承游隙及轴上零件位置的调整}
+见书。\\
 
 \subsubsection{滚动轴承的配合}
+见书。\\
 
 \subsubsection{滚动轴承的预紧}
+常用预紧措施：\\
+1. 夹紧一对圆锥滚子轴承的外圈。\\
+2. 用弹簧预紧，预紧力稳定。\\
+3. 在一对轴承中间装入长度不等的套筒，预紧力大小由套筒长度控制，刚性较大。\\
+4. 夹紧一对磨窄的外圈，反装时可磨窄内圈。\\
 
 \subsubsection{滚动轴承的润滑}
+轴承润滑方式的选择与轴承的速度有关。\\
+以轴承内径d和转速n的乘积来判断。\\
+1. 脂润滑，适用于较低dn。\\
+2. 油润滑，根据【P343，图13-26】选择。\\
+3. 固体润滑，适用于dn很大。\\
 
 \subsubsection{滚动轴承的密封装置}
+端盖金属不与轴直接接触。\\
+密封的作用时防止异物进入轴承，阻止润滑剂流失。\\
+1. 接触时密封：\\
+1）毡圈密封。\\
+2）唇型圈密封。\\
+3）密封环。\\
+2. 非接触式密封：\\
+1）隙缝密封。\\
+2）甩油密封。\\
+3）曲路密封\\
+
 
 \subsection{其他}
 见书，此处忽略\\
@@ -1611,6 +1725,8 @@ $\eta_1=\frac{\tan\gamma}{\tan(\gamma+\varphi_v)}$\\
 
 \section{联轴器和离合器}
 \subsection{联轴器的种类和特性}
+%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+%\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\
 
 \subsubsection{刚性联轴器}
 
