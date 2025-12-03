@@ -1661,7 +1661,7 @@ $P_0=X_0F_r+Y_0F_a$\\
 \raggedright 各数值查手册。\\
 
 \subsubsection{不同可靠度时滚动轴承的计算}
-若对可靠度的要求不同，则须通过可靠度寿命修正系数$a_0$来修正。\\
+若对可靠度的要求不同，则须通过可靠度寿命修正系数$a_1$来修正。\\
 \centering$L_{nm}=a_1L_{10}$\\
 $L_{nm}=\frac{10^6a_1}{60n}(\frac{C}{P})^\epsilon$\\
 
@@ -1725,8 +1725,6 @@ $L_{nm}=\frac{10^6a_1}{60n}(\frac{C}{P})^\epsilon$\\
 
 \section{联轴器和离合器}
 \subsection{联轴器的种类和特性}
-%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-%\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\
 
 \subsubsection{刚性联轴器}
 
@@ -1773,30 +1771,93 @@ $L_{nm}=\frac{10^6a_1}{60n}(\frac{C}{P})^\epsilon$\\
 
 \section{轴}
 \subsection{概述}
-
 \subsubsection{轴的用途及分类}
+轴的主要功能是支承回转零件及传递动力和动力。\\
+根据承受载荷的类型可分为三种：\\
+1. 转轴承受转矩和扭矩。\\
+2. 心轴只承受弯矩。\\
+3. 传动轴只承受转矩。\\
+根据形状可分为两种：
+1. 直轴，可继续分为光轴和阶梯轴。\\
 
-\subsubsection{周设计的主要内容}
+光轴多用于心轴和传动轴，阶梯轴多用于转轴。\\
+2. 曲轴。\\
+曲轴将旋转运动转变为往复直线运动。\\
+
+\subsubsection{轴设计的主要内容}
+结构设计、强度计算。\\
 
 \subsubsection{轴的材料}
+主要材料为碳钢和合金钢，刚度近似。\\
+碳钢价格低，对应力集中的敏感度较低。\\
+合金钢有更好的力学性能（强度）和淬火性能。\\
+高强度铸铁和球墨铸铁更容易做出复杂的形状，且价廉，吸振性和耐磨性良好。\\
+
 
 \subsection{轴的结构设计}
+轴的结构应满足：\\
+1. 轴和装在轴上的零件要有准确的工作位置。\\
+2. 轴上的零件应变与装拆和调整。\\
+3. 轴应具有良好的制造工艺性。\\
 
 \subsubsection{拟定轴上零件的装配方案}
+套筒与轴间隙配合。\\
+轮毂的宽度比相配合轴段的长度长3\~5cm。\\
 
 \subsubsection{轴上零件的定位}
+见书。\\
 
 \subsubsection{各轴段直径和长度的确定}
+见书。\\
 
 \subsubsection{提高轴的强度的常用措施}
+1. 合理布置轴上零件以减小轴的载荷。\\
+2. 改进轴上零件的结构以减小轴的载荷。\\
+3. 改进轴的结构以减小应力集中的影响。\\
+4. 改进轴的表面质量以提高轴的疲劳强度。\\
 
 \subsubsection{轴的结构工艺性}
+见书。\\
+
 
 \subsection{轴的计算}
+计算轴的强度和刚度要求，必要时校验振动稳定性。\\
 
 \subsubsection{轴的强度校核计算}
+1. 扭转强度条件\\
+\centering$\tau_T=\frac{T}{W_T}\approx\frac{9550000\frac{P}{n}}{0.2d^3}\leqslant[\tau_T]$\\
+$d\geqslant\sqrt[3]{\frac{9550000P}{0.2[\tau_T]n}}=A_0\sqrt[3]{\frac{P}{n}}$\\
+\raggedright 对于空心轴\\
+\centering$d\geqslant A_0\sqrt[3]{\frac{P}{n(1-\beta^4)}}$\\
+\raggedright$\beta$为内径外径之比\\
+对于$d>100mm$的轴，有一个键槽时轴径增大3\%，两个增大7\%\\
+$d\leqslant100mm$的轴，5\%~7\%，10\%~15\%。\\
+\vspace*{1em}
+2. 弯扭合成强度\\
+1）把轴简化为铰支梁，载荷简化为集中载荷。\\
+2）作出水平面和垂直面的弯矩图，并合成。\\
+3）作出扭矩图。\\
+4）按第三强度理论校核轴的强度。\\
+\centering$\sigma_{ca}=\frac{\sqrt{M^2+(\alpha T)^2}}{W}\leqslant[\sigma_{-1}]$\\
+\vspace*{1em}
+\raggedright3. 按疲劳强度条件校核\\
+见本文第二章（【第三章】）\\
+\vspace*{1em}
+4. 按静强度校核\\
+\centering$S_{S_\sigma}=\frac{\sigma_S}{\frac{M_{\max}}{W}+\frac{F_{a{\max}}}{A}}$\\
+$S_{S_\tau}=\frac{\tau_S}{\frac{T_{\max}}{W_T}}$\\
+$S_{S_{ca}}=\frac{S_{S_\sigma}S_{S_\tau}}{\sqrt{S_{S_\sigma}^2+S_{S_\tau}^2}}\geqslant S_S$\\
 
-\subsubsection{轴的刚度校核计算}
+\raggedright\subsubsection{轴的刚度校核计算}
+1. 计算阶梯轴的当量直径\\
+\centering$d_v=\sqrt[4]{\frac{L}{\sum\limits_{i=1^z}\frac{l_i}{d_i^4}}}$\\
+$y\leqslant[y]$，$\theta\leqslant[\theta]$\\
+\raggedright 轴的扭转刚度校核\\
+光轴和阶梯轴分别为：\\
+\centering$\phi=5.73\times10^4\frac{T}{GI_p}$\\
+$\phi=5.73\times10^4\frac{1}{LG}\sum\limits_{i=1^z}\frac{T_il_i}{I_{pi}}$\\
+%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+%\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\
 
 \subsubsection{轴的振动及振动稳定性的概念}
 
