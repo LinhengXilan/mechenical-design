@@ -1,0 +1,561 @@
+\documentclass[a4paper]{article}
+\usepackage[UTF8]{ctex}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{cases}
+\usepackage{amssymb}
+\usepackage{color}
+\usepackage[rgb]{xcolor}
+\setstretch{1.5}
+\geometry{a4paper, top=1.8cm, left=2.5cm, right=2.5cm, bottom=1.8cm}
+
+
+\newcommand{\ColorImportant}{\textcolor{red!100!green!80!blue!60}}
+\newcommand{\ColorFormula}{\textcolor{red!100!green!73!blue!100}}
+
+
+\title{机械原理}
+\author{lhxl}
+
+
+\begin{document}
+\maketitle
+
+
+\raggedright
+\section{机构组成和结构分析}
+\subsection{机构的组成}
+\subsubsection{构件}
+构件是参与运动的最小单元，零件是单独加工的最小单元。\\
+
+\subsubsection{运动副}
+运动副是构件间接触形成的可动连接。\\
+构建未连接时由六个自由度。\\
+引入n个约束的运动副称为n级副。\\
+面接触的为低副，其他为高副，高副比低副更易磨损。\\
+常见运动副符号见【P10~P12，表1.1】。\\
+
+\subsubsection{运动链}
+运动链是多个构件通过运动副构成的系统。\\
+如果运动链首末封闭则为闭链，否则为开链。\\
+
+\subsubsection{机构}
+在运动链中若固定某一构件，使其他构件有确定的相对运动，则此运动链成为机构。\\
+
+
+
+\subsection{机构运动简图}
+\subsubsection{运动简图}
+见【P13~P15，表1.2；P15~P17，表1.3】。\\
+
+\subsubsection{运动简图的绘制}
+见书。\\
+
+
+\subsection{运动链成为机构的条件}
+\subsubsection{运动链的自由度计算}
+设有$n$个构件，则初始有$6n$个自由度。\\
+当引入$p_n$个$n$级副时。\\
+自由度为：\\
+\centering$F=6n-5p_5-4p_4-3p_3-2p_2-p_1$\\
+\raggedright 平面运动链中\\
+\centering$F=3n-2p_5-p_4$\\
+
+\raggedright\subsubsection{运动链成为机构的条件}
+运动链的自由度大于零，且原动件的数量等于自由度时，有确定的运动则称为机构。\\
+
+\subsubsection{计算自由度时应注意的问题}
+1. 复合铰链\\
+若$k$个构件在同一点构成运动副，则运动副数量为$k-1$。\\
+2. 局部自由度\\
+有些构件产生的自由度并不影响其他构件，仅在自身局部产生作用。\\
+因此计算自由度时应减去。\\
+\centering$F=3n-2p_5-p_4-F_{局部}$\\
+\raggedright 3. 虚约束\\
+1. 自由度被多个运动副同时限制。\\
+2. 不同自由度产生同样的效果。\\
+3. 不同构件运动轨迹相同的。\\
+4. 约束不影响运动的。\\
+这些多余的约束称为虚约束，计算自由度时应忽略。\\
+
+
+\subsection{机构的组成原理和结构分析}
+\subsubsection{平面机构的高副低代}
+高副低代的条件：\\
+1. 代替后自由度不变。\\
+2. 代替后速度和加速度不变。\\
+
+\subsubsection{机构的组成原理}
+1. 杆组\\
+杆组是机构中不可再分的自由度为零的构建组合。\\
+\centering$3n-2p_5=0$\\
+\raggedright 因此n只能为偶数。\\
+常见杆组见【P25，图1.20、图1.21】。\\
+\vspace*{1em}
+2. 机构的组成原理\\
+把若干个自由度为零的基本杆组连接到机架和原动件上。\\
+满足条件的情况下，机构越简单越好。\\
+
+\subsubsection{机构的结构分析}
+见书。\\
+
+
+
+\section{连杆机构}
+\subsection{平面连杆机构的类型}
+结构最简单运用最广泛的是平面四杆机构。\\
+
+\subsubsection{平面四杆机构的基本型式}
+非机架的杆件称作摇杆，能做整周运动的称为曲柄。\\
+\vspace*{1em}
+1. 曲柄摇杆机构\\
+2. 双曲柄机构\\
+两曲柄长度相同时称为平行四边形机构，可能会卡死，因此可在从动曲柄上装一个惯性较大的轮子。\\
+3. 双摇杆机构\\
+两曲柄长度相同时称为等腰梯形机构。\\
+
+\subsubsection{平面四杆机构的演化}
+1. 转动副转化成移动副。\\
+2. 选取不同构件为机架。\\
+3. 变换构件的形态。\\
+4. 扩大转动副的尺寸。\\
+
+
+\subsection{平面连杆机构的工作特性}
+\subsubsection{运动特性}
+1. 转动副为整转副的条件\\
+1）组成整转副的两个构件中必有一个最短杆，且最长和最短杆长度之和必小于等于其余两构件的长度。\\
+\vspace*{1em}
+2. 急回运动特性\\
+两摇杆的平均角速度不同，这种运动称为急回运动。\\
+行程速度变化系数：\\
+\centering$K=\frac{\varphi_1}{\varphi_2}=\frac{180^\circ+\theta}{180^\circ-\theta}$\\
+\raggedright 极位夹角：\\
+\centering$\theta=180^\circ\frac{K-1}{K+1}$\\
+\raggedright $\theta$角和$K$越大，急回运动特性越显著。\\
+\vspace*{1em}
+3. 运动的连续性\\
+构件的各自的可行域必须连续，否则运动不连续。\\
+
+\subsubsection{传力特性}
+1. 压力角和传动角\\
+$$\begin{cases}
+    F_t=&F\cos\alpha \\
+    F_n=&F\sin\alpha
+\end{cases}$$
+$\alpha$称为压力角。\\
+压力角的余角称为传动角：\\
+\centering$\gamma=90^\circ-\alpha$\\
+\raggedright 传动角越大，机构效率越高。\\
+为了保证机构有良好传力性，$\gamma\geqslant40^\circ$，对于高速和大功率传动器械，$\gamma\geqslant50^\circ$。\\
+\vspace*{1em}
+2. 死点位置\\
+机构运行中，从动件可能出现共线的情况，此时从动件的传动角为0。\\
+应采取措施使机构通过死点。\\
+有时死点也能起到夹紧等作用。\\
+
+
+\subsection{平面连杆机构的的特点及功能}
+\subsubsection{平面连杆机构的特点}
+1. 构件间以低副连接，可传递较大动力。\\
+2. 构建运动具有多样性。\\
+3. 再主动件运动规律不变的情况下，只要改变连杆机构各构件的相对尺寸，就可以使从动件实现不同的运动规律的运动要求。\\
+4. 连杆曲线具有多样性。\\
+5. 在连杆机构的运动过程中，一些构件的质心在做变速运动，产生动载荷，发生震动，因此连杆机构不适于高速运动。\\
+6. 由于各构件尺寸不可能完全精准，因此运动误差较大。\\
+
+\subsubsection{平面连杆机构的功能}
+1. 实现有轨迹、位置或有运动规律要求的运动。\\
+2. 实现从动件运动形式及运动特性的改变。\\
+3. 实现较远距离的传动。\\
+4. 调节、扩大从动件行程。\\
+5. 获得较大的机械增益。\\
+机械输出力矩（或力）与输入力矩（或力）的比值称为机械增益。\\
+
+
+\subsection{平面连杆机构的运动分析}
+\subsubsection{瞬心法及其应用}
+1. 速度瞬心\\
+当两构件做平面相对运动时，在任意瞬间，都可以认为他们在绕某一重合点作相对运动，这个点被称为速度瞬心。\\
+\vspace*{1em}
+2. 机构中速度瞬心的数量\\
+\centering$N=n(n-1)/2$\\
+\vspace*{1em}
+\raggedright 3. 机构中瞬心位置的确定\\
+1）通过运动副连接的构件\\
+（1）以转动副连接的构件\\
+运动副的连接处即为瞬心。\\
+（2）以移动副链接的两构件的瞬心\\
+瞬心位于垂直于移动方向的无限远处。\\
+（3）以平面高副连接的两构件的瞬心\\
+若运动为纯滚动，则瞬心为滚动接触点。\\
+若运动为滚动加运动，则瞬心位于转动切向方向。\\
+2）不直接相连的两构件的瞬心\\
+此瞬心满足三心定理：做平面运动的三个构件的三个瞬心位于同一直线。\\
+\vspace*{1em}
+4. 瞬心在速度分析中的应用\\
+见【P53，图2.48】\\
+可看作AB和CD以$P_{24}$为圆心转动。\\
+
+\subsubsection{平面机构的整体运动分析法}
+见书。\\
+二次方程求根公式中根号项M前为位置模式。\\
+
+\subsubsection{基本杆组法及其应用}
+1. 基本杆组法\\
+2. 基本杆组法的应用\\
+
+\subsection{平面连杆机构的运动设计}
+\subsubsection{平面连杆机构设计的基本问题}
+1. 实现刚体给定位置的设计\\
+2. 实现预定运动规律的设计\\
+3. 事先预定轨迹的设计\\
+
+\subsubsection{刚体导引机构的设计}
+见书。\\
+
+\subsubsection{函数生成机构的设计}
+略。\\
+
+\subsubsection{急回机构的设计}
+通常要求按照给定的K值设计。\\
+首先计算极位夹角。\\
+作图法见书。\\
+
+\subsubsection{轨迹生成机构的设计}
+略。\\
+
+
+\subsection{空间连杆机构}
+略。\\
+
+
+
+\section{凸轮机构}
+\subsection{凸轮机构的组成和特点}
+\subsubsection{凸轮机构的组成}
+凸轮机构由凸轮、从动件、机架组成。\\
+
+\subsubsection{凸轮机构的类型}
+1. 按照凸轮形状分\\
+1）盘型凸轮、2）移动凸轮、3）圆柱凸轮。\\
+\vspace*{1em}
+2. 按照从动件的形状分\\
+1）尖端从动件\\
+能与任意复杂的凸轮配合使用。\\
+结构简单，尖端处易磨损。\\
+2）曲面从动件\\
+应用较多。\\
+3）滚子从动件\\
+从动件与凸轮之间有滑动摩擦。\\
+4）平底从动件\\
+从动件与凸轮之间为线接触，润滑好。\\
+凸轮对从动件的作用力永远垂直于底面，受力平稳，传动效率高，常用于高速场合。\\
+缺点是凸轮必须是外凸形状。\\
+\vspace*{1em}
+3. 按照从动件运动类型分类\\
+1）移动从动件，2）摆动从动件。\\
+\vspace*{1em}
+4. 按照凸轮与从动件维持高副接触的方法分类\\
+1）力封闭型凸轮机构\\
+通过重力等维持凸轮与从动件之间的接触。\\
+2）型封闭凸轮结构\\
+（1）槽凸轮机构，（2）等宽凸轮机构等。。。\\
+
+
+\subsection{凸轮机构的特点和功能}
+\subsubsection{凸轮机构的特点}
+结构简单紧凑。\\
+%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+%\centering$$\\\raggedright\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+
+
+\subsection{从动件运动规律设计}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+
+
+\subsection{凸轮廓线设计}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+
+
+\subsection{凸轮机构基本参数设计}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+
+
+
+\section{齿轮机构}
+\subsection{齿轮机构的组成和类型}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+
+
+\subsection{渐开线齿廓及其啮合特性}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+
+
+\subsection{渐开线标准直齿圆柱齿轮}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+
+
+\subsection{渐开线标准直齿圆柱齿轮的啮合传动}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+
+
+\subsection{渐开线的范成加工及渐开线齿廓的根切}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+
+
+\subsection{渐开线变位齿轮}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+
+
+\subsection{渐开线直齿圆柱齿轮的传动设计}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+
+
+\subsection{渐开线圆柱齿轮机构}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+
+
+\subsection{蜗杆蜗轮机构}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+
+
+\subsection{圆锥齿轮机构}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+
+
+\subsection{非圆齿轮机构}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+
+
+
+\section{轮系}
+\subsection{轮系的类型}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+
+
+\subsection{轮系的传动比}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+
+
+\subsection{轮系的效率}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+
+
+\subsection{轮系的功能}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+
+
+\subsection{轮系的设计}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+
+
+\subsection{行星传动}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+
+
+
+\section{平衡}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+
+
+\end{document}

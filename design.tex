@@ -452,7 +452,7 @@ V带的疲劳强度条件为\\
 \raggedright 此时\\
 \centering$F_{ec}=F_1(1-\frac{1}{e^{f_v\alpha}})=\sigma_1A(1-\frac{1}{e^{f_v\alpha}})$\\
 \raggedright 此时，单根带的基本额定（最大）功率为\\
-\centering$P_0=\frac{([\sigma]-\sigma_{b1}-\sigma_c)(1-\frac{1}{e^{f_v\alpha}})Av}{1000}$\\
+\centering$P_0=\frac{zF_{ec}v}{1000}=\frac{([\sigma]-\sigma_{b1}-\sigma_c)(1-\frac{1}{e^{f_v\alpha}})Av}{1000}$\\
 \raggedright 基本额定功率主要与带型、小带轮基准直径、带速有关。\\
 见【P163~164，表8-4】，根据小带轮转速和基本额定功率选择小带轮的基准直径。\\
 
@@ -527,6 +527,7 @@ $d_d\geqslant300$，轮辐式。\\
 \subsubsection{V带轮的轮槽}
 见【P171，表8-11】\\
 轮槽表面粗糙度为Ra1.6或Ra3.2\\
+由于带弯曲后形变，因此轮槽应小于40°。\\
 
 \subsubsection{V带轮的技术要求}
 不允许有砂眼、裂缝、缩孔和气泡。\\
@@ -912,7 +913,7 @@ $$\begin{cases}
 \end{cases}$$
 
 \subsubsection{齿根弯曲疲劳强度计算}
-介绍载荷作用于齿顶，并由一对轮齿承担，在齿根产生弯曲应力的计算方法。\\
+计算载荷作用于\ColorImportant{齿顶}，并由一对轮齿承担，在齿根产生的弯曲应力。\\
 对于与其他情况之间的误差，由重合度系数修正。\\
 受力图见【P211，图10-15】。\\
 危险截面的弯曲应力为\\
@@ -961,7 +962,7 @@ $$\begin{cases}
 齿轮精度分为0~12，共13个等级。\\
 三个公差组：\\
 第一公差组：用齿轮一转内的转角误差表示，决定齿轮传递运动的准确程度。\\
-第二公差组：用齿轮一齿内的转角误差表示，决定齿轮运转的平稳程度。\\
+第二公差组：用齿轮一齿内的转角误差表示，决定齿轮运转的平稳程度，依据圆周速度。\\
 第三公差组：用啮合区域的形状、位置和大小表示，决定齿轮载荷分布的均匀程度。\\
 见【P222，表10-7】。\\
 
@@ -1078,11 +1079,11 @@ $$\begin{cases}
 \raggedright 斜齿圆柱齿轮的弯曲疲劳强度条件为\\
 \centering$\sigma_F=\frac{2K_FT_1Y_{Fa}Y_{Sa}Y_\epsilon Y_\beta\cos^2\beta}{\phi_dm^3_nz^2_1}\leqslant[\sigma_F]$\\
 \raggedright 其中\\
-$Y_\epsilon=0.25+\frac{0.75}{\epsilon_{\alpha v}}$\\
+\centering$Y_\epsilon=0.25+\frac{0.75}{\epsilon_{\alpha v}}$\\
 $\epsilon_{\alpha v}=\epsilon_\alpha/\cos^2\beta_b$\\
 $Y_\beta=1-\epsilon_\beta\frac{\beta}{120^\circ}$\\
 $\epsilon_\beta=\phi_dz_1\tan\beta/\pi$\\
-于是可得\\
+\raggedright 于是可得\\
 \centering$m_n\geqslant\sqrt[3]{\frac{2K_FT_1Y_\epsilon Y_\beta\cos^2\beta}{\phi_dz^2_1}\frac{Y_{Fa}Y_{Sa}}{[\sigma_F]}}$\\
 
 \raggedright\subsubsection{齿面接触疲劳强度计算}
@@ -1856,11 +1857,7 @@ $y\leqslant[y]$，$\theta\leqslant[\theta]$\\
 光轴和阶梯轴分别为：\\
 \centering$\phi=5.73\times10^4\frac{T}{GI_p}$\\
 $\phi=5.73\times10^4\frac{1}{LG}\sum\limits_{i=1^z}\frac{T_il_i}{I_{pi}}$\\
-%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-%\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\\centering$$\\\raggedright\\
 
 \subsubsection{轴的振动及振动稳定性的概念}
-
-
 
 \end{document}
